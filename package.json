@@ -1,31 +1,22 @@
 {
-  "name": "model-view-controller-mvc-challenge-tech-blog",
+  "name": "techblog",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js --ignore client",
+    "develop": "concurrently \"cd server && npm run start\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ricky-rosay/Model-View-Controller-MVC-Challenge-Tech-Blog.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ricky-rosay/Model-View-Controller-MVC-Challenge-Tech-Blog/issues"
+  "devDependencies": {
+    "concurrently": "^7.0.0"
   },
-  "homepage": "https://github.com/ricky-rosay/Model-View-Controller-MVC-Challenge-Tech-Blog#readme",
   "dependencies": {
-    "bcrypt": "^5.0.0",
-    "bulma": "^0.9.0",
-    "connect-session-sequelize": "^6.1.1",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^4.0.4",
-    "express-session": "^1.17.1",
-    "mysql2": "^2.1.0",
-    "nodemon": "^2.0.4",
-    "sequelize": "^5.21.13"
+    "nodemon": "^2.0.15"
   }
 }
